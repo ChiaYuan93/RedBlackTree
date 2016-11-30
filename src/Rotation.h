@@ -11,6 +11,5 @@ void leftRotateCase2(Node **nodePtr);
 void rightRotateCase2(Node **nodePtr);
 void rightRotateCase3(Node **nodePtr);
 void leftRotateCase3(Node **nodePtr);
-void rbtAdd(Node **nodePtr, Node *addNewNode);
 
 #endif // Rotation_H

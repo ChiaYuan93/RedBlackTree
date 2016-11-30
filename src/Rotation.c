@@ -2,33 +2,6 @@
 #include "Node.h"
 #include <stdio.h>
 
-void rbtAdd(Node **nodePtr, Node *addNewNode){
-  Node *root;
-  root = *nodePtr;
-  
-  if(root == NULL){
-    root = addNewNode;
-    addNewNode->left = NULL;
-    addNewNode->right = NULL;
-    addNewNode->color = RED;
-    return;
-  }
-  else if(addNewNode->data < root->data){
-    rbtAdd(&root->left, addNewNode);
-  }
-  else if(addNewNode->data > root->data){
-    rbtAdd(&root->right, addNewNode);
- 
-  }
-}
-
-// void checkViolation(Node **nodePtr){
-  // Node *root;
-  // root = *nodePtr;
-  
-  // if()
-// }
-
 void leftRotate(Node **nodePtr){
   Node *root, *child, *grandChild; 
   root = *nodePtr;

@@ -36,16 +36,14 @@ extern void test_leftRotation_given_5_20_25_50_node_should_rotate_left(void);
 extern void test_rightRotation_given_one_node_should_do_nothing(void);
 extern void test_rightRotation_given_20_50_node_should_rotate_right(void);
 extern void test_rightRotate_given_5_20_25_50_node_should_rotate_right(void);
-extern void test_leftRight_given_5_20_50_node_should_rotate_left_and_right(void);
-extern void test_rightLeft_given_5_20_25_node_should_rotate_right_and_left(void);
+extern void test_leftRightRotate_given_5_20_50_node_should_rotate_left_and_right(void);
+extern void test_rightLeftRotate_given_5_20_25_node_should_rotate_right_and_left(void);
 extern void test_recolorCase1_given_left_child_and_grandChild_are_red_should_recolor(void);
 extern void test_recolorCase1_given_right_child_and_grandChild_are_red_should_recolor(void);
 extern void test_leftRotateCase2_given_left_child_and_right_grandChild_are_red_should_rotate_left(void);
 extern void test_rightRotateCase2_given_right_child_and_left_grandChild_are_red_should_rotate_right(void);
 extern void test_rightRotateCase3_given_left_child_and_left_grandChild_are_red_should_rotate_right(void);
 extern void test_leftRotateCase3_given_right_child_and_right_grandChild_are_red_should_rotate_left(void);
-extern void test_rbtADD_given_root_is_null_new_node_should_become_red_color_root(void);
-extern void test_rbtADD_given_added_new_node_larger_than_root_and_righ_child_should_place_at_right(void);
 
 
 //=======Test Reset Option=====
@@ -61,22 +59,20 @@ void resetTest(void)
 int main(void)
 {
   UnityBegin("test_Rotation.c");
-  RUN_TEST(test_leftRotation_given_one_node_should_do_nothing, 27);
-  RUN_TEST(test_leftRotation_given_20_50_node_should_rotate_left, 45);
-  RUN_TEST(test_leftRotation_given_5_20_25_50_node_should_rotate_left, 65);
-  RUN_TEST(test_rightRotation_given_one_node_should_do_nothing, 85);
-  RUN_TEST(test_rightRotation_given_20_50_node_should_rotate_right, 101);
-  RUN_TEST(test_rightRotate_given_5_20_25_50_node_should_rotate_right, 120);
-  RUN_TEST(test_leftRight_given_5_20_50_node_should_rotate_left_and_right, 143);
-  RUN_TEST(test_rightLeft_given_5_20_25_node_should_rotate_right_and_left, 164);
-  RUN_TEST(test_recolorCase1_given_left_child_and_grandChild_are_red_should_recolor, 185);
-  RUN_TEST(test_recolorCase1_given_right_child_and_grandChild_are_red_should_recolor, 208);
-  RUN_TEST(test_leftRotateCase2_given_left_child_and_right_grandChild_are_red_should_rotate_left, 231);
-  RUN_TEST(test_rightRotateCase2_given_right_child_and_left_grandChild_are_red_should_rotate_right, 252);
-  RUN_TEST(test_rightRotateCase3_given_left_child_and_left_grandChild_are_red_should_rotate_right, 273);
-  RUN_TEST(test_leftRotateCase3_given_right_child_and_right_grandChild_are_red_should_rotate_left, 294);
-  RUN_TEST(test_rbtADD_given_root_is_null_new_node_should_become_red_color_root, 317);
-  RUN_TEST(test_rbtADD_given_added_new_node_larger_than_root_and_righ_child_should_place_at_right, 339);
+  RUN_TEST(test_leftRotation_given_one_node_should_do_nothing, 28);
+  RUN_TEST(test_leftRotation_given_20_50_node_should_rotate_left, 46);
+  RUN_TEST(test_leftRotation_given_5_20_25_50_node_should_rotate_left, 66);
+  RUN_TEST(test_rightRotation_given_one_node_should_do_nothing, 86);
+  RUN_TEST(test_rightRotation_given_20_50_node_should_rotate_right, 102);
+  RUN_TEST(test_rightRotate_given_5_20_25_50_node_should_rotate_right, 121);
+  RUN_TEST(test_leftRightRotate_given_5_20_50_node_should_rotate_left_and_right, 144);
+  RUN_TEST(test_rightLeftRotate_given_5_20_25_node_should_rotate_right_and_left, 165);
+  RUN_TEST(test_recolorCase1_given_left_child_and_grandChild_are_red_should_recolor, 186);
+  RUN_TEST(test_recolorCase1_given_right_child_and_grandChild_are_red_should_recolor, 209);
+  RUN_TEST(test_leftRotateCase2_given_left_child_and_right_grandChild_are_red_should_rotate_left, 232);
+  RUN_TEST(test_rightRotateCase2_given_right_child_and_left_grandChild_are_red_should_rotate_right, 253);
+  RUN_TEST(test_rightRotateCase3_given_left_child_and_left_grandChild_are_red_should_rotate_right, 274);
+  RUN_TEST(test_leftRotateCase3_given_right_child_and_right_grandChild_are_red_should_rotate_left, 295);
 
   return (UnityEnd());
 }
