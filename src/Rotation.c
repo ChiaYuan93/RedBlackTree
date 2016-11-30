@@ -8,9 +8,9 @@ void rbtAdd(Node **nodePtr, Node *addNewNode){
   
   if(root == NULL){
     root = addNewNode;
-    root->left = NULL;
-    root->right = NULL;
-    root->color = RED;
+    addNewNode->left = NULL;
+    addNewNode->right = NULL;
+    addNewNode->color = RED;
     return;
   }
   else if(addNewNode->data < root->data){
@@ -18,6 +18,7 @@ void rbtAdd(Node **nodePtr, Node *addNewNode){
   }
   else if(addNewNode->data > root->data){
     rbtAdd(&root->right, addNewNode);
+ 
   }
 }
 
