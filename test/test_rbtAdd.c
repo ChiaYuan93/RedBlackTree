@@ -99,58 +99,6 @@ void test_rbtADD_and_checkViolation_given_added_new_node_cause_violation_case1_s
 
 /**
 *	      
-*	       root         add new node             root           case 2                   root      
-*	       50(B)         node 25                50(B)         left rotate               50(B)        
-*       /             ---------->            /              ---------->              /   \  
-*   (R)20                                 (R)20                                   (R)25  NULL  
-*                                         /  \                                    /  \     
-*                                      NULL (R)25                              (R)20 NULL 
-*                                            /  \                             /  \
-*                                          NULL NULL                        NULL NULL
-**/
-void test_rbtADD_and_checkViolation_given_added_new_node_cause_violation_case2_should_rotate_left(void){
-  Node *root = &node50;
-  Node *addNewNode = &node25;
-  
-  initNode(&node20, 20, NULL, NULL, RED);
-  initNode(&node50, 50, &node20, NULL, BLACK);
-  initNode(&node25, 25, &node5, &node30, BLACK);
-  
-  rbtAdd(&root, addNewNode);
-  
-  TEST_ASSERT_EQUAL_NODE(20, NULL, NULL, RED, &node20);
-  TEST_ASSERT_EQUAL_NODE(25, &node20, NULL, RED, &node25);
-  TEST_ASSERT_EQUAL_NODE(50, &node25, NULL, BLACK, &node50);
-}
-
-/**
-*	      
-*	       root         add new node           root           case 2                   root      
-*	       5(B)          node 50              5(B)           right rotate              5(B)        
-*          \          ---------->          /    \         ------------>             /   \
-*          100(R)                        NULL  100(R)                            NULL   50(R)
-*                                              /    \                                  /   \
-*                                            (R)50  NULL                            NULL   100(R)
-*                                                                                          /  \
-*                                                                                         NULL NULL
-**/
-void test_rbtADD_and_checkViolation_given_added_new_node_cause_violation_case2_should_rotate_right(void){
-  Node *root = &node5;
-  Node *addNewNode = &node50;
-  
-  initNode(&node100, 100, NULL, NULL, RED);
-  initNode(&node5, 5, NULL, &node100, BLACK);
-  initNode(&node50, 50, &node25, &node150, BLACK);
-  
-  rbtAdd(&root, addNewNode);
-  
-  TEST_ASSERT_EQUAL_NODE(100, NULL, NULL, RED, &node100);
-  TEST_ASSERT_EQUAL_NODE(50, NULL, &node100, RED, &node50);
-  TEST_ASSERT_EQUAL_NODE(5, NULL, &node50, BLACK, &node5);
-}
-
-/**
-*	      
 *	       root         add new node               root           case 3                root 
 *	       50(B)         node 20                  50(B)         right rotate            25(B)
 *       /             ---------->              /   \          ---------->            /  \
@@ -225,4 +173,30 @@ void test_rbtADD_and_checkViolation_given_added_new_node_cause_violation_case2_a
   TEST_ASSERT_EQUAL_NODE(20, NULL, NULL, RED, &node20);
   TEST_ASSERT_EQUAL_NODE(50, NULL, NULL, RED, &node50);
   TEST_ASSERT_EQUAL_NODE(25, &node20, &node50, BLACK, &node25);
+}
+
+/**
+*	      
+*	    root     add new node       root      case 2           root         case 3          root
+*	    5(B)      node 50           5(B)     right rotate      5(B)        left rotate     50(B) 
+*      \      ---------->       /   \     ------------>     /   \        --------->      /  \ 
+*     100(R)                 NULL  100(R)                NULL   50(R)                (R)5  100(R) 
+*                                 /   \                        /   \                         
+*                             (R)50  NULL                   NULL   100(R)
+*                                                                 /  \
+*                                                              NULL NULL
+**/
+void test_rbtADD_and_checkViolation_given_added_new_node_cause_violation_case2_and_case3_should_rotate_right_and_left(void){
+  Node *root = &node5;
+  Node *addNewNode = &node50;
+  
+  initNode(&node100, 100, NULL, NULL, RED);
+  initNode(&node5, 5, NULL, &node100, BLACK);
+  initNode(&node50, 50, &node25, &node150, BLACK);
+  
+  rbtAdd(&root, addNewNode);
+  
+  TEST_ASSERT_EQUAL_NODE(5, NULL, NULL, RED, &node5);
+  TEST_ASSERT_EQUAL_NODE(100, NULL, NULL, RED, &node100);
+  TEST_ASSERT_EQUAL_NODE(50, &node5, &node100, BLACK, &node50);
 }

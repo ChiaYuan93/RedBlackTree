@@ -17,11 +17,12 @@ void rbtAdd(Node **nodePtr, Node *addNewNode){
   }
   else if(addNewNode->data < root->data){
     rbtAdd(&root->left, addNewNode);
+    checkViolation(&(*nodePtr));
   }
   else if(addNewNode->data > root->data){
     rbtAdd(&root->right, addNewNode);
+    checkViolation(&(*nodePtr));
   }
-  checkViolation(&(*nodePtr));
 }
 
 void checkViolation(Node **nodePtr){
@@ -34,6 +35,7 @@ void checkViolation(Node **nodePtr){
   else if((root->left) != NULL || (root->right) == NULL){  
     if(root->left->right != NULL){
       leftRotateCase2(&(*nodePtr));     //call case2 left rotate function
+      rightRotateCase3(&(*nodePtr));   //call case3 right rotate function
     }
     else if(root->left->left != NULL){
       rightRotateCase3(&(*nodePtr));   //call case3 right rotate function
@@ -42,9 +44,10 @@ void checkViolation(Node **nodePtr){
   else if((root->right) != NULL || (root->left) == NULL){  
     if(root->right->left != NULL){
       rightRotateCase2(&(*nodePtr));   //call case2 right rotate function
+      leftRotateCase3(&(*nodePtr));   //call case3 left rotate function
     }
     else if(root->right->right != NULL){
-      leftRotateCase3(&(*nodePtr));   //call case3 right rotate function
+      leftRotateCase3(&(*nodePtr));   //call case3 left rotate function
     }
   }
 }
