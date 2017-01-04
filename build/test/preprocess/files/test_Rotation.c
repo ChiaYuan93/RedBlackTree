@@ -7,13 +7,11 @@
 
 
 
-Node node0,node5, node20, node25, node30, node50, node100, node150;
+Node node5, node20, node25, node30, node50, node100, node150;
 
 
 
 void setUp(void) {
-
-  initNode(&node0, 0, ((void *)0), ((void *)0), BLACK);
 
   initNode(&node5, 5, ((void *)0), ((void *)0), BLACK);
 
@@ -63,11 +61,11 @@ void test_leftRotation_given_one_node_should_do_nothing(void) {
 
 
 
-  testAssertCompareNodes(&node20, root, 35);;
+  testAssertCompareNodes(&node20, root, 34);;
 
-  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 36);;
+  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 35);;
 
-  testAssertNode(20, &node5, ((void *)0), BLACK, &node20, 37);;
+  testAssertNode(20, &node5, ((void *)0), BLACK, &node20, 36);;
 
 }
 
@@ -99,11 +97,11 @@ void test_leftRotation_given_20_50_node_should_rotate_left(void) {
 
 
 
-  testAssertCompareNodes(&node50, root, 53);;
+  testAssertCompareNodes(&node50, root, 52);;
 
-  testAssertNode(50, &node20, ((void *)0), BLACK, &node50, 54);;
+  testAssertNode(50, &node20, ((void *)0), BLACK, &node50, 53);;
 
-  testAssertNode(20, ((void *)0), ((void *)0), BLACK, &node20, 55);;
+  testAssertNode(20, ((void *)0), ((void *)0), BLACK, &node20, 54);;
 
 }
 
@@ -125,15 +123,15 @@ void test_leftRotation_given_5_20_25_50_node_should_rotate_left(void) {
 
 
 
-  testAssertCompareNodes(&node50, root, 75);;
+  testAssertCompareNodes(&node50, root, 74);;
 
-  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 76);;
+  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 75);;
 
-  testAssertNode(25, ((void *)0), ((void *)0), BLACK, &node25, 77);;
+  testAssertNode(25, ((void *)0), ((void *)0), BLACK, &node25, 76);;
 
-  testAssertNode(20, &node5, &node25, BLACK, &node20, 78);;
+  testAssertNode(20, &node5, &node25, BLACK, &node20, 77);;
 
-  testAssertNode(50, &node20, ((void *)0), BLACK, &node50, 79);;
+  testAssertNode(50, &node20, ((void *)0), BLACK, &node50, 78);;
 
 }
 
@@ -159,9 +157,9 @@ void test_rightRotation_given_one_node_should_do_nothing(void) {
 
 
 
-  testAssertCompareNodes(&node20, root, 92);;
+  testAssertCompareNodes(&node20, root, 91);;
 
-  testAssertNode(20, ((void *)0), ((void *)0), BLACK, &node20, 93);;
+  testAssertNode(20, ((void *)0), ((void *)0), BLACK, &node20, 92);;
 
 }
 
@@ -193,11 +191,11 @@ void test_rightRotation_given_20_50_node_should_rotate_right(void) {
 
 
 
-  testAssertCompareNodes(&node20, root, 109);;
+  testAssertCompareNodes(&node20, root, 108);;
 
-  testAssertNode(20, ((void *)0), &node50, BLACK, &node20, 110);;
+  testAssertNode(20, ((void *)0), &node50, BLACK, &node20, 109);;
 
-  testAssertNode(50, ((void *)0), ((void *)0), BLACK, &node50, 111);;
+  testAssertNode(50, ((void *)0), ((void *)0), BLACK, &node50, 110);;
 
 }
 
@@ -219,15 +217,15 @@ void test_rightRotate_given_5_20_25_50_node_should_rotate_right(void) {
 
 
 
-  testAssertCompareNodes(&node20, root, 130);;
+  testAssertCompareNodes(&node20, root, 129);;
 
-  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 131);;
+  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 130);;
 
-  testAssertNode(25, ((void *)0), ((void *)0), BLACK, &node25, 132);;
+  testAssertNode(25, ((void *)0), ((void *)0), BLACK, &node25, 131);;
 
-  testAssertNode(20, &node5, &node50, BLACK, &node20, 133);;
+  testAssertNode(20, &node5, &node50, BLACK, &node20, 132);;
 
-  testAssertNode(50, &node25, ((void *)0), BLACK, &node50, 134);;
+  testAssertNode(50, &node25, ((void *)0), BLACK, &node50, 133);;
 
 }
 
@@ -247,13 +245,13 @@ void test_leftRightRotate_given_5_20_50_node_should_rotate_left_and_right(void){
 
 
 
-  testAssertCompareNodes(&node20, root, 152);;
+  testAssertCompareNodes(&node20, root, 151);;
 
-  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 153);;
+  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 152);;
 
-  testAssertNode(50, ((void *)0), ((void *)0), BLACK, &node50, 154);;
+  testAssertNode(50, ((void *)0), ((void *)0), BLACK, &node50, 153);;
 
-  testAssertNode(20, &node5, &node50, BLACK, &node20, 155);;
+  testAssertNode(20, &node5, &node50, BLACK, &node20, 154);;
 
 }
 
@@ -273,13 +271,13 @@ void test_rightLeftRotate_given_5_20_25_node_should_rotate_right_and_left(void){
 
 
 
-  testAssertCompareNodes(&node20, root, 173);;
+  testAssertCompareNodes(&node20, root, 172);;
 
-  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 174);;
+  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 173);;
 
-  testAssertNode(25, ((void *)0), ((void *)0), BLACK, &node25, 175);;
+  testAssertNode(25, ((void *)0), ((void *)0), BLACK, &node25, 174);;
 
-  testAssertNode(20, &node5, &node25, BLACK, &node20, 176);;
+  testAssertNode(20, &node5, &node25, BLACK, &node20, 175);;
 
 }
 
@@ -303,13 +301,13 @@ void test_recolorCase1_given_left_child_and_grandChild_are_red_should_recolor(vo
 
 
 
-  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 196);;
+  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 195);;
 
-  testAssertNode(100, ((void *)0), ((void *)0), BLACK, &node100, 197);;
+  testAssertNode(100, ((void *)0), ((void *)0), BLACK, &node100, 196);;
 
-  testAssertNode(5, ((void *)0), &node25, BLACK, &node5, 198);;
+  testAssertNode(5, ((void *)0), &node25, BLACK, &node5, 197);;
 
-  testAssertNode(50, &node5, &node100, RED, &node50, 199);;
+  testAssertNode(50, &node5, &node100, RED, &node50, 198);;
 
 }
 
@@ -333,13 +331,13 @@ void test_recolorCase1_given_right_child_and_grandChild_are_red_should_recolor(v
 
 
 
-  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 219);;
+  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 218);;
 
-  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 220);;
+  testAssertNode(5, ((void *)0), ((void *)0), BLACK, &node5, 219);;
 
-  testAssertNode(100, &node25, ((void *)0), BLACK, &node100, 221);;
+  testAssertNode(100, &node25, ((void *)0), BLACK, &node100, 220);;
 
-  testAssertNode(50, &node5, &node100, RED, &node50, 222);;
+  testAssertNode(50, &node5, &node100, RED, &node50, 221);;
 
 }
 
@@ -361,11 +359,11 @@ void test_leftRotateCase2_given_left_child_and_right_grandChild_are_red_should_r
 
 
 
-  testAssertNode(100, &node50, ((void *)0), BLACK, &node100, 241);;
+  testAssertNode(100, &node50, ((void *)0), BLACK, &node100, 240);;
 
-  testAssertNode(50, &node25, ((void *)0), RED, &node50, 242);;
+  testAssertNode(50, &node25, ((void *)0), RED, &node50, 241);;
 
-  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 243);;
+  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 242);;
 
 }
 
@@ -387,11 +385,11 @@ void test_rightRotateCase2_given_right_child_and_left_grandChild_are_red_should_
 
 
 
-  testAssertNode(20, ((void *)0), &node50, BLACK, &node20, 262);;
+  testAssertNode(20, ((void *)0), &node50, BLACK, &node20, 261);;
 
-  testAssertNode(50, ((void *)0), &node100, RED, &node50, 263);;
+  testAssertNode(50, ((void *)0), &node100, RED, &node50, 262);;
 
-  testAssertNode(100, ((void *)0), ((void *)0), RED, &node100, 264);;
+  testAssertNode(100, ((void *)0), ((void *)0), RED, &node100, 263);;
 
 }
 
@@ -413,11 +411,11 @@ void test_rightRotateCase3_given_left_child_and_left_grandChild_are_red_should_r
 
 
 
-  testAssertNode(50, &node25, &node100, BLACK, &node50, 283);;
+  testAssertNode(50, &node25, &node100, BLACK, &node50, 282);;
 
-  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 284);;
+  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 283);;
 
-  testAssertNode(100, ((void *)0), ((void *)0), RED, &node100, 285);;
+  testAssertNode(100, ((void *)0), ((void *)0), RED, &node100, 284);;
 
 }
 
@@ -439,10 +437,10 @@ void test_leftRotateCase3_given_right_child_and_right_grandChild_are_red_should_
 
 
 
-  testAssertNode(50, &node25, &node100, BLACK, &node50, 304);;
+  testAssertNode(50, &node25, &node100, BLACK, &node50, 303);;
 
-  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 305);;
+  testAssertNode(25, ((void *)0), ((void *)0), RED, &node25, 304);;
 
-  testAssertNode(100, ((void *)0), ((void *)0), RED, &node100, 306);;
+  testAssertNode(100, ((void *)0), ((void *)0), RED, &node100, 305);;
 
 }

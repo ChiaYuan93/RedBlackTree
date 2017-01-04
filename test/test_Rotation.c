@@ -4,10 +4,9 @@
 #include "Node.h"
 #include "CustomAssert.h"
 
-Node node0,node5, node20, node25, node30, node50, node100, node150;
+Node node5, node20, node25, node30, node50, node100, node150;
 
-void setUp(void) {  
-  initNode(&node0,     0, NULL, NULL, BLACK);  
+void setUp(void) {   
   initNode(&node5,     5, NULL, NULL, BLACK);  
   initNode(&node20,   20, NULL, NULL, BLACK);  
   initNode(&node25,   25, NULL, NULL, BLACK);  
@@ -159,8 +158,8 @@ void test_leftRightRotate_given_5_20_50_node_should_rotate_left_and_right(void){
 *	      5	     rotate right    5	     rotate left    	 20
 *	       \     ----------->	    \      ----------->	    /  \
 *	       25	       	            20	       	           5   25
-*	       /		                 /		      
-*       20 		                25 		    
+*	       /		                    \		      
+*       20 		                    25 		    
 **/
 void test_rightLeftRotate_given_5_20_25_node_should_rotate_right_and_left(void){
 	Node *root = &node5;
