@@ -2,17 +2,22 @@
 #define rbtRemove_H
 #include "Node.h"
 
-typedef struct ReturnedObject ReturnedObject;
-struct ReturnedObject{
-  Node *removedNode;
-  Color returnedColor;
-};
+int removeLeftCase1a1(Node **nodePtr, Node *removeNode);
+int removeLeftCase1a2(Node **nodePtr, Node *removeNode);
+int removeLeftCase1b1(Node **nodePtr, Node *removeNode);
+int removeLeftCase1b2(Node **nodePtr, Node *removeNode);
+int removeLeftCase2a(Node **nodePtr, Node *removeNode);
+int removeLeftCase2b(Node **nodePtr, Node *removeNode);
+int removeLeftCase3(Node **nodePtr, Node *removeNode);
+int removeRightCase1a1(Node **nodePtr, Node *removeNode);
+int removeRightCase1a2(Node **nodePtr, Node *removeNode);
+int removeRightCase1b1(Node **nodePtr, Node *removeNode);
+int removeRightCase1b2(Node **nodePtr, Node *removeNode);
+int removeRightCase2a(Node **nodePtr, Node *removeNode);
+int removeRightCase2b(Node **nodePtr, Node *removeNode);
+int removeRightCase3(Node **nodePtr, Node *removeNode);
 
-ReturnedObject rbtRemoveNode(Node *nodePtr);
-void removeCase1a1(Node **nodePtr, ReturnedObject removedNode);
-void removeCase1a2(Node **nodePtr, ReturnedObject removedNode);
-void removeCase1b1(Node **nodePtr, ReturnedObject removedNode);
-void removeCase1b2(Node **nodePtr, ReturnedObject removedNode);
-void removeCase2a(Node **nodePtr, ReturnedObject removedNode);
+int pollLeftRemove(Node **nodePtr, Node *removeNode);
+int pollRightRemove(Node **nodePtr, Node *removeNode);
 
 #endif // rbtRemove_H

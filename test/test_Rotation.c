@@ -93,6 +93,24 @@ void test_rightRotation_given_one_node_should_do_nothing(void) {
 }
 
 /**
+*     root    rotate right       root 
+*      20    ------------>        20 
+*       \                          \
+*       50                         50
+**/
+void test_rightRotation_given_root_20_child_50_should_rotate_right(void) {
+  Node *root = &node20;
+  initNode(&node20, 20, NULL, &node50, BLACK); 
+  initNode(&node50, 50, NULL, NULL, BLACK); 
+ 
+  rightRotate(&root);
+  
+  TEST_ASSERT_COMPARE_NODES(&node20, root);   
+  TEST_ASSERT_EQUAL_NODE(20, NULL, &node50, BLACK, &node20); 
+  TEST_ASSERT_EQUAL_NODE(50, NULL, NULL, BLACK, &node50); 
+}
+
+ /**
 *      root    rotate right       root 
 *       50    ------------>        20 
 *      /                            \
